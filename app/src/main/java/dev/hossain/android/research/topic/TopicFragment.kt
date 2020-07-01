@@ -12,7 +12,6 @@ import dagger.hilt.android.AndroidEntryPoint
 import dev.hossain.android.research.common.observeKotlin
 import dev.hossain.android.research.data.TopicsDataProvider
 import dev.hossain.android.research.databinding.FragmentResearchTopicBinding
-import timber.log.Timber
 
 @AndroidEntryPoint
 class TopicFragment : Fragment() {
@@ -20,7 +19,6 @@ class TopicFragment : Fragment() {
     private lateinit var adapter: TopicsAdapter
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        Timber.d("Loading view for Topic Fragment")
         val binding = FragmentResearchTopicBinding.inflate(inflater, container, false).apply {
             lifecycleOwner = this@TopicFragment
             vm = viewModel
@@ -30,7 +28,7 @@ class TopicFragment : Fragment() {
             viewModel.onTopicSelected(it)
         }
 
-        binding.recyclerView.setHasFixedSize(false)
+        binding.recyclerView.setHasFixedSize(true)
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerView.adapter = adapter
 
