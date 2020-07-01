@@ -12,6 +12,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import dev.hossain.android.research.common.observeKotlin
 import dev.hossain.android.research.data.TopicsDataProvider
 import dev.hossain.android.research.databinding.FragmentResearchTopicBinding
+import timber.log.Timber
 
 @AndroidEntryPoint
 class TopicFragment : Fragment() {
@@ -41,6 +42,7 @@ class TopicFragment : Fragment() {
         adapter.submitList(TopicsDataProvider.topics)
 
         viewModel.navigationEvent.observeKotlin(viewLifecycleOwner) { researchTopicId ->
+            Timber.d("Got navigation event: $researchTopicId")
             when (researchTopicId) {
                 TopicsDataProvider.TYPE_DATA_BINDING_ASSISTED -> {
                     findNavController().navigate(TopicFragmentDirections.navigateToDataBindingAssistedFragment())

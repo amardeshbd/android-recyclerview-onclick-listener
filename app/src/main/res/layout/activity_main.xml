@@ -28,7 +28,12 @@
                 app:title="Topics" />
         </com.google.android.material.appbar.AppBarLayout>
 
-        <androidx.fragment.app.FragmentContainerView
+        <!--
+            Known Caveat about using `androidx.fragment.app.FragmentContainerView`:
+            - https://issuetracker.google.com/issues/142847973
+            - https://stackoverflow.com/questions/59275009/fragmentcontainerview-using-findnavcontroller/59275182#59275182
+        -->
+        <fragment
             android:id="@+id/nav_host_fragment"
             android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
@@ -36,6 +41,7 @@
             android:layout_marginTop="?attr/actionBarSize"
             app:defaultNavHost="true"
             app:navGraph="@navigation/app_nav_graph"
-            tools:background="#ddc" />
+            tools:background="#cfc"
+            tools:ignore="FragmentTagUsage" />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>
