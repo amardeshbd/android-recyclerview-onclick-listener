@@ -47,6 +47,10 @@ class TopicFragment : Fragment() {
                 TopicsDataProvider.TYPE_DATA_BINDING_ASSISTED -> {
                     findNavController().navigate(TopicFragmentDirections.navigateToDataBindingAssistedFragment())
                 }
+                TopicsDataProvider.TYPE_DATA_PLAIN_LISTENER -> {
+                    // TODO - implement example
+                    findNavController().navigate(TopicFragmentDirections.navigateToShowSourceCodeFragment())
+                }
             }
         }
     }
