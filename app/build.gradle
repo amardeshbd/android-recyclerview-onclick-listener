@@ -35,6 +35,10 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    buildFeatures { // https://developer.android.com/studio/releases/gradle-plugin#buildFeatures
+        dataBinding = true
+    }
 }
 
 dependencies {

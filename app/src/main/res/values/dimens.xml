@@ -1,0 +1,20 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Material Design Library Overrides -->
+    <integer name="design_snackbar_text_max_lines" tools:ignore="PrivateResource,UnusedResources">3</integer>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="list_item_horizontal_margin">8dp</dimen>
+    <dimen name="list_item_vertical_margin">8dp</dimen>
+    <dimen name="list_item_card_corner_radius">4dp</dimen>
+    <dimen name="list_item_card_elevation">4dp</dimen>
+
+    <!-- Internal predefined dimensions used for view spacing between each other -->
+    <dimen name="view_spacing_xxlarge">32dp</dimen>
+    <dimen name="view_spacing_xlarge">24dp</dimen>
+    <dimen name="view_spacing_larger">16dp</dimen>
+    <dimen name="view_spacing_large">12dp</dimen>
+    <dimen name="view_spacing_medium">8dp</dimen>
+    <dimen name="view_spacing_small">4dp</dimen>
+</resources>
