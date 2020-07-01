@@ -4,7 +4,9 @@ added using best practices followed in the industry and community.
 
 ## Background
 Personally, I have been relying on Googling, StackOverflow, and Google's official Android developer 
-guide to implement click listener for `RecyclerView` for some time now.  
+guide to implementing click listener for `RecyclerView` for some time now. Even though, I have 
+settled on the solution recommended by Google, I still wanted to explore the past and 
+present (as of `2020`) on what is current and what are the confusions.
 
 Whenever I [Googled](https://www.google.com/search?q=android+recyclerview+click+listener), 
 I could see I am not the only one looking for answers 🤷, 
