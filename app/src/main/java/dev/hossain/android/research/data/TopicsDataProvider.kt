@@ -2,6 +2,9 @@ package dev.hossain.android.research.data
 
 import dev.hossain.android.research.data.model.ResearchTopic
 
+/**
+ * Provides list of [ResearchTopic] for adapter.
+ */
 object TopicsDataProvider {
     val topics = listOf(
         ResearchTopic(
