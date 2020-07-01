@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">RecyclerView-Research</string>
+    <string name="app_name">Click</string>
 
     <!-- Titles -->
     <string name="title_research_topic_sample_list">Research Examples</string>
