@@ -51,7 +51,9 @@ dependencies {
     implementation "androidx.cardview:cardview:1.0.0"
 
     // Finally add the `RecyclerView` - The research topic
-    // https://developer.android.com/jetpack/androidx/releases/recyclerview
+    // - https://developer.android.com/reference/androidx/recyclerview/widget/RecyclerView
+    // - https://developer.android.com/guide/topics/ui/layout/recyclerview
+    // - https://developer.android.com/jetpack/androidx/releases/recyclerview
     implementation "androidx.recyclerview:recyclerview:1.1.0"
 
     // Timber for logging
