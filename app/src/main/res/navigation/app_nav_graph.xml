@@ -7,5 +7,13 @@
     <fragment
         android:id="@+id/topicFragment"
         android:name="dev.hossain.android.research.topic.TopicFragment"
-        android:label="TopicFragment" />
+        android:label="TopicFragment">
+        <action
+            android:id="@+id/navigate_to_dataBindingAssistedFragment"
+            app:destination="@id/dataBindingAssistedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dataBindingAssistedFragment"
+        android:name="dev.hossain.android.research.samples.databinding.DataBindingAssistedFragment"
+        android:label="DataBindingAssistedFragment" />
 </navigation>

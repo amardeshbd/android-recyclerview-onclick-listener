@@ -14,7 +14,7 @@ class TopicsAdapter constructor(
 ) : DataBoundListAdapter<ResearchTopic, ListItemResearchTopicBinding>(
     diffCallback = object : DiffUtil.ItemCallback<ResearchTopic>() {
         override fun areItemsTheSame(oldItem: ResearchTopic, newItem: ResearchTopic): Boolean {
-            return oldItem.title == newItem.title
+            return oldItem.id == newItem.id
         }
 
         override fun areContentsTheSame(oldItem: ResearchTopic, newItem: ResearchTopic): Boolean {
