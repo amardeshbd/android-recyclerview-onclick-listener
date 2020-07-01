@@ -4,9 +4,9 @@
     android:shape="ring"
     android:thicknessRatio="2"
     android:useLevel="false">
-    <solid android:color="@color/primaryLightColor" />
+    <solid android:color="?attr/colorButtonNormal" />
 
     <stroke
         android:width="2dp"
-        android:color="@color/primaryDarkColor" />
+        android:color="?attr/colorControlNormal" />
 </shape>
