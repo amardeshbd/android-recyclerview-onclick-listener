@@ -24,7 +24,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:background="#cad" />
+            tools:background="#cad"
+            tools:listitem="@layout/list_item_research_topic" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
