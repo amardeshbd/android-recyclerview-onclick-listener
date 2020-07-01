@@ -32,10 +32,17 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/navigate_to_showSourceCodeFragment"
+            app:destination="@id/showSourceCodeFragment" />
     </fragment>
     <fragment
         android:id="@+id/dataBindingAssistedFragment"
         android:name="dev.hossain.android.research.samples.databinding.DataBindingAssistedFragment"
         android:label="@string/title_research_type_data_binding_assisted_recycler_view_example"
         tools:layout="@layout/research_data_binding_assisted_example_fragment" />
+    <fragment
+        android:id="@+id/showSourceCodeFragment"
+        android:name="dev.hossain.android.research.viewcode.ShowSourceCodeFragment"
+        android:label="ShowSourceCodeFragment" />
 </navigation>
