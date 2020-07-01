@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.snackbar.Snackbar
 import dev.hossain.android.research.data.model.Person
 import dev.hossain.android.research.databinding.ListItemCommonUserContactWithBindingBinding
 import timber.log.Timber
@@ -14,8 +15,8 @@ import timber.log.Timber
  *
  * Example taken from sunflower app.
  */
-class DataBindingAssistedPeopleAdapter
-    : ListAdapter<Person, RecyclerView.ViewHolder>(PersonDiffCallback()) {
+class DataBindingAssistedPeopleAdapter :
+    ListAdapter<Person, RecyclerView.ViewHolder>(PersonDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return PersonViewHolder(
@@ -36,7 +37,14 @@ class DataBindingAssistedPeopleAdapter
         init {
             binding.root.setOnClickListener {
                 binding.data?.let { person ->
-                    Timber.i("Clicked on person: $person")
+                    Timber.i("Clicked on person: $person at adapterPosition=$adapterPosition")
+
+                    // Show user their tap feedback
+                    Snackbar.make(
+                        binding.root,
+                        "You tapped on $person at adapter position $adapterPosition.",
+                        Snackbar.LENGTH_SHORT
+                    ).show()
                 }
             }
         }
