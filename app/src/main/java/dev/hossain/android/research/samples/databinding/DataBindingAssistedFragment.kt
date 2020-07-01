@@ -13,7 +13,7 @@ class DataBindingAssistedFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val binding = ResearchDataBindingAssistedExampleFragmentBinding.inflate(inflater, container, false)
 
-        binding.recyclerView.setHasFixedSize(false)
+        binding.recyclerView.setHasFixedSize(true)
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
         val dataBindingAssistedPeopleAdapter = DataBindingAssistedPeopleAdapter()
         binding.recyclerView.adapter = dataBindingAssistedPeopleAdapter
