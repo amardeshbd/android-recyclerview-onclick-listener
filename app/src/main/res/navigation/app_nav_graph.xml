@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/app_nav_graph"
     app:startDestination="@id/topicFragment">
 
     <fragment
         android:id="@+id/topicFragment"
         android:name="dev.hossain.android.research.topic.TopicFragment"
-        android:label="TopicFragment">
+        android:label="@string/title_research_topic_sample_list"
+        tools:layout="@layout/fragment_research_topic">
         <action
             android:id="@+id/navigate_to_dataBindingAssistedFragment"
             app:destination="@id/dataBindingAssistedFragment" />
@@ -15,5 +17,6 @@
     <fragment
         android:id="@+id/dataBindingAssistedFragment"
         android:name="dev.hossain.android.research.samples.databinding.DataBindingAssistedFragment"
-        android:label="DataBindingAssistedFragment" />
+        android:label="@string/title_research_type_data_binding_assisted_recycler_view_example"
+        tools:layout="@layout/research_data_binding_assisted_example_fragment" />
 </navigation>
