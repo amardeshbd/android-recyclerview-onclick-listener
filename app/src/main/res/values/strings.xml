@@ -4,6 +4,7 @@
     <!-- Screen Titles -->
     <string name="title_research_topic_sample_list">Research Examples</string>
     <string name="title_research_type_data_binding_assisted_recycler_view_example">Data Binding Based</string>
+    <string name="title_show_source_code_and_synopsis">Code Synopsis</string>
 
     <!-- Menu Titles -->
     <string name="title_menu_summary_of_research">Synopsis</string>

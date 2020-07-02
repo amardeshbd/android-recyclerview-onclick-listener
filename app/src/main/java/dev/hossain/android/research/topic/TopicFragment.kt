@@ -45,11 +45,11 @@ class TopicFragment : Fragment() {
             Timber.d("Got navigation event: $researchTopicId")
             when (researchTopicId) {
                 TopicsDataProvider.TYPE_DATA_BINDING_ASSISTED -> {
-                    findNavController().navigate(TopicFragmentDirections.navigateToDataBindingAssistedFragment())
+                    findNavController().navigate(TopicFragmentDirections.toDataBindingAssistedFragment())
                 }
                 TopicsDataProvider.TYPE_DATA_PLAIN_LISTENER -> {
                     // TODO - implement example
-                    findNavController().navigate(TopicFragmentDirections.navigateToShowSourceCodeFragment())
+                    findNavController().navigate(TopicFragmentDirections.toShowSourceCodeFragment("prism.html"))
                 }
             }
         }

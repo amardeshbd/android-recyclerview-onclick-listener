@@ -6,12 +6,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.navArgs
 import androidx.webkit.WebSettingsCompat
 import androidx.webkit.WebViewFeature
 import dev.hossain.android.research.databinding.FragmentShowSourceCodeBinding
 
 class ShowSourceCodeFragment : Fragment() {
+    companion object {
+        private const val ANDROID_ASSETS_PATH = "file:///android_asset/"
+    }
+
     private lateinit var binding: FragmentShowSourceCodeBinding
+    private val args: ShowSourceCodeFragmentArgs by navArgs()
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentShowSourceCodeBinding.inflate(inflater, container, false)
 
@@ -31,7 +38,7 @@ class ShowSourceCodeFragment : Fragment() {
             settings.javaScriptEnabled = true
             webChromeClient = WebViewChromeClient()
             webViewClient = AppWebViewClient()
-            loadUrl("file:///android_asset/prism.html")
+            loadUrl("$ANDROID_ASSETS_PATH${args.htmlFilePath}")
         }
     }
 }
