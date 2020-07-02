@@ -2,6 +2,8 @@
 This is a sample research project that consolidates how RecyclerView item click listener is 
 added using best practices followed in the industry and community.
 
+![project-banner-for-click](https://user-images.githubusercontent.com/99822/86301635-5747b700-bbd4-11ea-9f07-39e5913ba016.jpg)
+
 ## Background
 Personally, I have been relying on Googling, StackOverflow, and Google's official Android developer 
 guide to implementing click listener for `RecyclerView` for some time now. Even though, I have 
