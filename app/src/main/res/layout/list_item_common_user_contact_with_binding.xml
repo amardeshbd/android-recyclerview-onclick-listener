@@ -11,13 +11,14 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/view_spacing_medium"
         android:foreground="?android:attr/selectableItemBackground"
         tools:ignore="UnusedAttribute">
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/person_thumb"
             style="?textAppearanceHeadline3"
             android:layout_width="80dp"
@@ -57,7 +58,7 @@
             app:layout_constraintTop_toBottomOf="@+id/name"
             tools:text="@tools:sample/us_phones" />
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/company"
             style="?textAppearanceBody1"
             android:layout_width="0dp"
