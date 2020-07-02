@@ -17,7 +17,7 @@ import timber.log.Timber
  */
 class NonDataBindingFragment : Fragment(), NonDataBindingPeopleAdapter.PersonAdapterListener {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val rootView = inflater.inflate(R.layout.fragment_full_screen_recycler_view, container, false)
+        val rootView = inflater.inflate(R.layout.common_full_screen_recycler_view, container, false)
 
         val recyclerView = rootView.findViewById<RecyclerView>(R.id.recycler_view)
 

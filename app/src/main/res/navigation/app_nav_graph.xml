@@ -65,5 +65,5 @@
         android:id="@+id/nonDataBindingFragment"
         android:name="dev.hossain.android.research.samples.listenerinterface.NonDataBindingFragment"
         android:label="@string/title_research_type_non_data_binding_listener_callback_recycler_view_example"
-        tools:layout="@layout/fragment_full_screen_recycler_view" />
+        tools:layout="@layout/common_full_screen_recycler_view" />
 </navigation>
