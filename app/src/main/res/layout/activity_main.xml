@@ -44,12 +44,5 @@
             tools:background="#cfc"
             tools:ignore="FragmentTagUsage" />
 
-        <androidx.emoji.widget.EmojiTextView
-            android:id="@+id/emoji_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="?textAppearanceHeadline3"
-            android:layout_gravity="center|bottom"
-            android:text="This is a text"/>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

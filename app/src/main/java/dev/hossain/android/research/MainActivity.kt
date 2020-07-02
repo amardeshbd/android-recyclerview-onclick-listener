@@ -15,16 +15,6 @@ import timber.log.Timber
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
-    companion object {
-        // [U+1F469] (WOMAN) + [U+200D] (ZERO WIDTH JOINER) + [U+1F4BB] (PERSONAL COMPUTER)
-        private val WOMAN_TECHNOLOGIST = "\uD83D\uDC69\u200D\uD83D\uDCBB"
-
-        // [U+1F469] (WOMAN) + [U+200D] (ZERO WIDTH JOINER) + [U+1F3A4] (MICROPHONE)
-        private val WOMAN_SINGER = "\uD83D\uDC69\u200D\uD83C\uDFA4"
-
-        @JvmField
-        val EMOJI = WOMAN_TECHNOLOGIST + " " + WOMAN_SINGER
-    }
     private lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
     private lateinit var appBarConfiguration: AppBarConfiguration
@@ -37,8 +27,6 @@ class MainActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(navController.graph)
         binding.toolbar.setupWithNavController(navController, appBarConfiguration)
         setSupportActionBar(binding.toolbar)
-
-        binding.emojiText.setText(EMOJI)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
