@@ -49,7 +49,7 @@ class TopicFragment : Fragment() {
                 }
                 TopicsDataProvider.TYPE_DATA_PLAIN_LISTENER -> {
                     // TODO - implement example
-                    findNavController().navigate(TopicFragmentDirections.navigateToShowSourceCodeFragment())
+                    findNavController().navigate(TopicFragmentDirections.navigateToShowSourceCodeFragment("prism.html"))
                 }
             }
         }

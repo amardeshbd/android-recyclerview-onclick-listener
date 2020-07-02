@@ -44,5 +44,9 @@
     <fragment
         android:id="@+id/showSourceCodeFragment"
         android:name="dev.hossain.android.research.viewcode.ShowSourceCodeFragment"
-        android:label="ShowSourceCodeFragment" />
+        android:label="@string/title_show_source_code_and_synopsis">
+        <argument
+            android:name="htmlFilePath"
+            app:argType="string" />
+    </fragment>
 </navigation>
