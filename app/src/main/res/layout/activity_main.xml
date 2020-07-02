@@ -43,5 +43,6 @@
             app:navGraph="@navigation/app_nav_graph"
             tools:background="#cfc"
             tools:ignore="FragmentTagUsage" />
+
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>
