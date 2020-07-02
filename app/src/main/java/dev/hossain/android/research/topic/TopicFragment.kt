@@ -48,8 +48,7 @@ class TopicFragment : Fragment() {
                     findNavController().navigate(TopicFragmentDirections.toDataBindingAssistedFragment())
                 }
                 TopicsDataProvider.TYPE_DATA_PLAIN_LISTENER -> {
-                    // TODO - implement example
-                    findNavController().navigate(TopicFragmentDirections.toShowSourceCodeFragment("prism.html"))
+                    findNavController().navigate(TopicFragmentDirections.toNonDataBindingFragment())
                 }
             }
         }

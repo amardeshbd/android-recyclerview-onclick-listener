@@ -34,7 +34,18 @@
             app:popExitAnim="@anim/slide_out_right" />
         <action
             android:id="@+id/to_showSourceCodeFragment"
-            app:destination="@id/showSourceCodeFragment" />
+            app:destination="@id/showSourceCodeFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/to_nonDataBindingFragment"
+            app:destination="@id/nonDataBindingFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/dataBindingAssistedFragment"
@@ -50,4 +61,9 @@
             android:name="htmlFilePath"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/nonDataBindingFragment"
+        android:name="dev.hossain.android.research.samples.listenerinterface.NonDataBindingFragment"
+        android:label="@string/title_research_type_non_data_binding_listener_callback_recycler_view_example"
+        tools:layout="@layout/fragment_full_screen_recycler_view" />
 </navigation>
