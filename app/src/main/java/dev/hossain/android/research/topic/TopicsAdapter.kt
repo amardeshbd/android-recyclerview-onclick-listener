@@ -10,7 +10,8 @@ import dev.hossain.android.research.data.model.ResearchTopic
 import dev.hossain.android.research.databinding.ListItemResearchTopicBinding
 
 class TopicsAdapter constructor(
-    private val itemClickCallback: ((ResearchTopic) -> Unit)?
+    private val itemClickCallback: ((ResearchTopic) -> Unit),
+    private val itemUrlClickCallback: ((String) -> Unit)
 ) : DataBoundListAdapter<ResearchTopic, ListItemResearchTopicBinding>(
     diffCallback = object : DiffUtil.ItemCallback<ResearchTopic>() {
         override fun areItemsTheSame(oldItem: ResearchTopic, newItem: ResearchTopic): Boolean {
@@ -31,9 +32,16 @@ class TopicsAdapter constructor(
 
         binding.root.setOnClickListener {
             binding.data?.let {
-                itemClickCallback?.invoke(it)
+                itemClickCallback.invoke(it)
             }
         }
+
+        binding.externalLink.setOnClickListener {
+            binding.data?.let {
+                itemUrlClickCallback.invoke(it.url!!)
+            }
+        }
+
         return binding
     }
 

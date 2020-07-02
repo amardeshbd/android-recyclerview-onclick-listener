@@ -2,12 +2,12 @@ package dev.hossain.android.research.samples.databinding
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
 import dev.hossain.android.research.data.model.Person
 import dev.hossain.android.research.databinding.ListItemCommonUserContactWithBindingBinding
+import dev.hossain.android.research.samples.PersonDiffCallback
 import timber.log.Timber
 
 /**
@@ -55,15 +55,5 @@ class DataBindingAssistedPeopleAdapter :
                 executePendingBindings()
             }
         }
-    }
-}
-
-private class PersonDiffCallback : DiffUtil.ItemCallback<Person>() {
-    override fun areItemsTheSame(oldItem: Person, newItem: Person): Boolean {
-        return oldItem.id == newItem.id
-    }
-
-    override fun areContentsTheSame(oldItem: Person, newItem: Person): Boolean {
-        return oldItem == newItem
     }
 }

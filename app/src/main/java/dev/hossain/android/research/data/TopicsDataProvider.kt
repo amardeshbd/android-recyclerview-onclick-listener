@@ -12,10 +12,10 @@ object TopicsDataProvider {
     val topics = listOf(
         ResearchTopic(
             id = TYPE_DATA_PLAIN_LISTENER,
-            title = "Plain old listener on ViewHolder",
-            description = "This is example of setting plain click listener using interface. " +
-                    "This reference example was taken from XYZ app.",
-            url = null
+            title = "Plain old callback listener on ViewHolder",
+            description = "This is example of setting plain click callback listener using custom interface. " +
+                    "This reference example was taken from 'material-components-android' catalog app.",
+            url = "https://github.com/material-components/material-components-android/blob/master/catalog/java/io/material/catalog/transition/hero/AlbumsAdapter.java"
         ),
         ResearchTopic(
             id = TYPE_DATA_BINDING_ASSISTED,

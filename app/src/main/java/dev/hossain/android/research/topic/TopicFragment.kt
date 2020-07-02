@@ -1,5 +1,7 @@
 package dev.hossain.android.research.topic
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,6 +16,9 @@ import dev.hossain.android.research.data.TopicsDataProvider
 import dev.hossain.android.research.databinding.FragmentResearchTopicBinding
 import timber.log.Timber
 
+/**
+ * Shows list of recycler view related topic for future experimentation.
+ */
 @AndroidEntryPoint
 class TopicFragment : Fragment() {
     private val viewModel by viewModels<TopicViewModel>()
@@ -25,9 +30,11 @@ class TopicFragment : Fragment() {
             vm = viewModel
         }
 
-        adapter = TopicsAdapter {
-            viewModel.onTopicSelected(it)
-        }
+        adapter = TopicsAdapter({ researchTopic ->
+            viewModel.onTopicSelected(researchTopic)
+        }, { externalUrl ->
+            openWebPage(externalUrl)
+        })
 
         binding.recyclerView.setHasFixedSize(true)
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
@@ -48,10 +55,21 @@ class TopicFragment : Fragment() {
                     findNavController().navigate(TopicFragmentDirections.toDataBindingAssistedFragment())
                 }
                 TopicsDataProvider.TYPE_DATA_PLAIN_LISTENER -> {
-                    // TODO - implement example
-                    findNavController().navigate(TopicFragmentDirections.toShowSourceCodeFragment("prism.html"))
+                    findNavController().navigate(TopicFragmentDirections.toNonDataBindingFragment())
                 }
             }
+        }
+    }
+
+    /**
+     * Loads an external web URL.
+     * https://developer.android.com/guide/components/intents-common#ViewUrl
+     */
+    private fun openWebPage(url: String) {
+        val webPage: Uri = Uri.parse(url)
+        val intent = Intent(Intent.ACTION_VIEW, webPage)
+        if (intent.resolveActivity(requireContext().packageManager) != null) {
+            startActivity(intent)
         }
     }
 }
