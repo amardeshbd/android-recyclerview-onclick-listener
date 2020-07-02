@@ -26,14 +26,14 @@
         android:label="@string/title_research_topic_sample_list"
         tools:layout="@layout/fragment_research_topic">
         <action
-            android:id="@+id/navigate_to_dataBindingAssistedFragment"
+            android:id="@+id/to_dataBindingAssistedFragment"
             app:destination="@id/dataBindingAssistedFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
         <action
-            android:id="@+id/navigate_to_showSourceCodeFragment"
+            android:id="@+id/to_showSourceCodeFragment"
             app:destination="@id/showSourceCodeFragment" />
     </fragment>
     <fragment
@@ -44,7 +44,8 @@
     <fragment
         android:id="@+id/showSourceCodeFragment"
         android:name="dev.hossain.android.research.viewcode.ShowSourceCodeFragment"
-        android:label="@string/title_show_source_code_and_synopsis">
+        android:label="@string/title_show_source_code_and_synopsis"
+        tools:layout="@layout/fragment_show_source_code">
         <argument
             android:name="htmlFilePath"
             app:argType="string" />
