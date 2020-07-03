@@ -25,7 +25,7 @@ class NonDataBindingFragment : Fragment(), NonDataBindingPeopleAdapter.PersonAda
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         val nonDataBindingPeopleAdapter = NonDataBindingPeopleAdapter(this)
         recyclerView.adapter = nonDataBindingPeopleAdapter
-        nonDataBindingPeopleAdapter.submitList(SampleDataProvider.people)
+        nonDataBindingPeopleAdapter.submitList(SampleDataProvider.people(limit = 30))
 
         return rootView
     }

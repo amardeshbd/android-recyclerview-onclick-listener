@@ -18,7 +18,7 @@ class DataBindingAssistedFragment : ExperimentBaseFragment() {
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
         val dataBindingAssistedPeopleAdapter = DataBindingAssistedPeopleAdapter()
         binding.recyclerView.adapter = dataBindingAssistedPeopleAdapter
-        dataBindingAssistedPeopleAdapter.submitList(SampleDataProvider.people)
+        dataBindingAssistedPeopleAdapter.submitList(SampleDataProvider.people(limit = 30))
 
         return binding.root
     }
