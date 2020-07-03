@@ -4,12 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import dev.hossain.android.research.data.SampleDataProvider
 import dev.hossain.android.research.databinding.ResearchDataBindingAssistedExampleFragmentBinding
+import dev.hossain.android.research.samples.ExperimentBaseFragment
 
-class DataBindingAssistedFragment : Fragment() {
+class DataBindingAssistedFragment : ExperimentBaseFragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val binding = ResearchDataBindingAssistedExampleFragmentBinding.inflate(inflater, container, false)
 
@@ -20,5 +21,12 @@ class DataBindingAssistedFragment : Fragment() {
         dataBindingAssistedPeopleAdapter.submitList(SampleDataProvider.people)
 
         return binding.root
+    }
+
+    override fun onSynopsisMenuClicked() {
+        findNavController().navigate(
+            DataBindingAssistedFragmentDirections
+                .actionDataBindingAssistedFragmentToShowSourceCodeFragment("synopsis_data_binding_listener.html")
+        )
     }
 }
