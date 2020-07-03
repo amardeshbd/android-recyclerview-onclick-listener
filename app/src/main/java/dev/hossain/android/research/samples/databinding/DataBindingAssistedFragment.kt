@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import dev.hossain.android.research.data.SampleDataProvider
@@ -13,6 +14,8 @@ import dev.hossain.android.research.samples.ExperimentBaseFragment
 
 class DataBindingAssistedFragment : ExperimentBaseFragment() {
     private lateinit var binding: ResearchDataBindingAssistedExampleFragmentBinding
+    private val args: DataBindingAssistedFragmentArgs by navArgs()
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = ResearchDataBindingAssistedExampleFragmentBinding.inflate(inflater, container, false)
 

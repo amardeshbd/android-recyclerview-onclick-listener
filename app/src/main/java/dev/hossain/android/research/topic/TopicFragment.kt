@@ -47,14 +47,14 @@ class TopicFragment : Fragment() {
 
         adapter.submitList(TopicsDataProvider.topics)
 
-        viewModel.navigationEvent.observeKotlin(viewLifecycleOwner) { researchTopicId ->
-            Timber.d("Got navigation event: $researchTopicId")
-            when (researchTopicId) {
+        viewModel.navigationEvent.observeKotlin(viewLifecycleOwner) { researchTopic ->
+            Timber.d("Got navigation event: ${researchTopic.id}")
+            when (researchTopic.id) {
                 TopicsDataProvider.TYPE_DATA_BINDING_ASSISTED -> {
-                    findNavController().navigate(TopicFragmentDirections.toDataBindingAssistedFragment())
+                    findNavController().navigate(TopicFragmentDirections.toDataBindingAssistedFragment(researchTopic))
                 }
                 TopicsDataProvider.TYPE_DATA_PLAIN_LISTENER -> {
-                    findNavController().navigate(TopicFragmentDirections.toNonDataBindingFragment())
+                    findNavController().navigate(TopicFragmentDirections.toNonDataBindingFragment(researchTopic))
                 }
             }
         }
