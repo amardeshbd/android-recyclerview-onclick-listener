@@ -3,6 +3,7 @@ package dev.hossain.android.research.common
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
+import android.widget.Toast
 import timber.log.Timber
 
 object IntentAction {
@@ -17,6 +18,13 @@ object IntentAction {
             context.startActivity(intent)
         } else {
             Timber.w("Unable to find any app that can open web URL")
+
+            // Instead of keeping user in dark, show them feedback about the issue.
+            Toast.makeText(
+                context,
+                "Ops! We're unable to open the URL as we can't find default browser app :-(",
+                Toast.LENGTH_SHORT
+            ).show()
         }
     }
 }
