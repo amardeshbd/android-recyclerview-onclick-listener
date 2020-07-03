@@ -11,5 +11,7 @@ data class ResearchTopic constructor(
     val id: String,
     val title: String,
     val description: String,
-    val url: String? = null
+    val sourceCodeUrl: String,
+    val synopsisHtmlPath: String = "wip.html",
+    val externalUrl: String? = null
 ) : Parcelable

@@ -8,6 +8,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
+import dev.hossain.android.research.common.IntentAction.openWebPage
 import dev.hossain.android.research.data.SampleDataProvider
 import dev.hossain.android.research.databinding.ResearchDataBindingAssistedExampleFragmentBinding
 import dev.hossain.android.research.samples.ExperimentBaseFragment
@@ -31,13 +32,15 @@ class DataBindingAssistedFragment : ExperimentBaseFragment() {
     override fun onSynopsisMenuClicked() {
         findNavController().navigate(
             DataBindingAssistedFragmentDirections
-                .actionDataBindingAssistedFragmentToShowSourceCodeFragment("synopsis_data_binding_listener.html")
+                .actionDataBindingAssistedFragmentToShowSourceCodeFragment(args.selectedTopic.synopsisHtmlPath)
         )
     }
 
     override fun onShowCodeClicked() {
-        Snackbar.make(binding.root, "Text", Snackbar.LENGTH_INDEFINITE)
-            .setAction("OK", {})
+        Snackbar.make(binding.root, "Shows source code for this experiment. Continue?", Snackbar.LENGTH_INDEFINITE)
+            .setAction("Show Code") {
+                openWebPage(requireContext(), args.selectedTopic.sourceCodeUrl)
+            }
             .show()
     }
 }

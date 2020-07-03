@@ -38,7 +38,7 @@ class TopicsAdapter constructor(
 
         binding.externalLink.setOnClickListener {
             binding.data?.let {
-                itemUrlClickCallback.invoke(it.url!!)
+                itemUrlClickCallback.invoke(it.externalUrl!!)
             }
         }
 
