@@ -9,4 +9,5 @@
 
     <!-- Menu Titles -->
     <string name="title_menu_summary_of_research">Synopsis</string>
+    <string name="title_menu_view_source_code">Code</string>
 </resources>

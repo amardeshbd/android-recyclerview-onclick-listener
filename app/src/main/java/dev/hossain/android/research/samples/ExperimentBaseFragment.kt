@@ -15,6 +15,11 @@ abstract class ExperimentBaseFragment : Fragment() {
      */
     abstract fun onSynopsisMenuClicked()
 
+    /**
+     * Called when user selects [R.id.menu_show_code] from the tool bar.
+     */
+    abstract fun onShowCodeClicked()
+
     //
     // Handle synopsis menu item for any example
     //
@@ -33,6 +38,11 @@ abstract class ExperimentBaseFragment : Fragment() {
             R.id.menu_synopsis -> {
                 Timber.d("User selected to see synopsis")
                 onSynopsisMenuClicked()
+                return true
+            }
+            R.id.menu_show_code -> {
+                Timber.d("User selected to see source code")
+                onShowCodeClicked()
                 return true
             }
             else -> {
