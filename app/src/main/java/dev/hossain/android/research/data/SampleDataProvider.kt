@@ -6,10 +6,18 @@ import dev.hossain.android.research.data.model.Person
  * Sample data provider that is used as sample data in RecyclerViews views.
  */
 object SampleDataProvider {
+
+    /**
+     * Provides list of persons with option to [limit] number of persons returned.
+     */
+    fun people(limit: Int = 50): List<Person> {
+        return people.take(limit)
+    }
+
     /**
      * Sample person data generated from <a href="https://generatedata.com/">generatedata.com</a>
      */
-    val people = listOf(
+    private val people = listOf(
         Person(id = 1, name = "Beau Flynn", phone = "(166) 535-9612", company = "Erat Volutpat Corp."),
         Person(id = 2, name = "Zephania Atkinson", phone = "(600) 187-4549", company = "Orci Ut Sagittis LLC"),
         Person(id = 3, name = "Damon Cannon", phone = "(145) 643-1468", company = "Sollicitudin Foundation"),
