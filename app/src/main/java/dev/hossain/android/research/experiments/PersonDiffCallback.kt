@@ -1,4 +1,4 @@
-package dev.hossain.android.research.samples
+package dev.hossain.android.research.experiments
 
 import androidx.recyclerview.widget.DiffUtil
 import dev.hossain.android.research.data.model.Person

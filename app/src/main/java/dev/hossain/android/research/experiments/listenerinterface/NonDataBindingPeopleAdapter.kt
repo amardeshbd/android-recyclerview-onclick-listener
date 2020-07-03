@@ -1,4 +1,4 @@
-package dev.hossain.android.research.samples.listenerinterface
+package dev.hossain.android.research.experiments.listenerinterface
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.textview.MaterialTextView
 import dev.hossain.android.research.R
 import dev.hossain.android.research.data.model.Person
-import dev.hossain.android.research.samples.PersonDiffCallback
+import dev.hossain.android.research.experiments.PersonDiffCallback
 
 /**
  * Adapter without data binding

@@ -1,4 +1,4 @@
-package dev.hossain.android.research.samples.databinding
+package dev.hossain.android.research.experiments.databinding
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
 import dev.hossain.android.research.data.model.Person
 import dev.hossain.android.research.databinding.ListItemCommonUserContactWithBindingBinding
-import dev.hossain.android.research.samples.PersonDiffCallback
+import dev.hossain.android.research.experiments.PersonDiffCallback
 import timber.log.Timber
 
 /**
