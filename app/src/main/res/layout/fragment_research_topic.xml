@@ -9,7 +9,7 @@
 
         <variable
             name="vm"
-            type="dev.hossain.android.research.topic.TopicViewModel" />
+            type="dev.hossain.android.research.researchtopic.TopicViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

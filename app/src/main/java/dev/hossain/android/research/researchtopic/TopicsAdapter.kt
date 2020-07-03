@@ -1,4 +1,4 @@
-package dev.hossain.android.research.topic
+package dev.hossain.android.research.researchtopic
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

@@ -1,4 +1,4 @@
-package dev.hossain.android.research.topic
+package dev.hossain.android.research.researchtopic
 
 import android.os.Bundle
 import android.view.LayoutInflater

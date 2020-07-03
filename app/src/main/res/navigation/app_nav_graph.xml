@@ -22,7 +22,7 @@
 
     <fragment
         android:id="@+id/topicFragment"
-        android:name="dev.hossain.android.research.topic.TopicFragment"
+        android:name="dev.hossain.android.research.researchtopic.TopicFragment"
         android:label="@string/title_research_topic_sample_list"
         tools:layout="@layout/fragment_research_topic">
         <action

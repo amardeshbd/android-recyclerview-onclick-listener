@@ -1,4 +1,4 @@
-package dev.hossain.android.research.topic
+package dev.hossain.android.research.researchtopic
 
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
