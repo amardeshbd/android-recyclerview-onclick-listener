@@ -11,6 +11,9 @@ object TopicsDataProvider {
     private const val BASE_PROJECT_URL = "https://github.com/amardeshbd/android-recyclerview-onclick-listener"
     private const val BASE_SOURCE_URL = "$BASE_PROJECT_URL/tree/master/app/src/main/java/dev/hossain/android/research"
 
+    /**
+     * List of experiment topics along with their information that is rendered in the app.
+     */
     val topics = listOf(
         ResearchTopic(
             id = TYPE_DATA_PLAIN_LISTENER,
@@ -18,6 +21,7 @@ object TopicsDataProvider {
             description = "This is example of setting plain click callback listener using custom interface. " +
                     "This reference example was taken from 'material-components-android' catalog app.",
             sourceCodeUrl = "$BASE_SOURCE_URL/experiments/listenerinterface",
+            synopsisHtmlPath = "synopsis_for_listener_interface_no_data_binding.html",
             externalUrl = "https://github.com/material-components/material-components-android/blob/master/catalog/java/io/material/catalog/transition/hero/AlbumsAdapter.java"
         ),
         ResearchTopic(
