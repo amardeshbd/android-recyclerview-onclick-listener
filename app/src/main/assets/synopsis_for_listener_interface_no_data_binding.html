@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- https://developer.chrome.com/multidevice/webview/pixelperfect -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="www/main.css" rel="stylesheet"/>
+
+    <!-- https://prismjs.com/ -->
+    <link href="www/prism.css" rel="stylesheet"/>
+    <script src="www/prism.js"></script>
+    <!-- HTML/XML encode entities: https://mothereff.in/html-entities -->
+</head>
+<body>
+<h2>Example of using custom callback interface without data binding</h2>
+<p>In this experiment, we are using our own defined callback interface class that will be
+    passed to the <code>RecyclerView</code> or <code>ListAdapter</code></p>
+
+<p>In this example, here is the interface with <code>onPersonClicked(Person)</code> callback
+    function defined.</p>
+<pre>
+<code class="language-kotlin">// `NonDataBindingPeopleAdapter.kt`
+interface PersonAdapterListener {
+    fun onPersonClicked(person: Person)
+}
+
+// Adapter constructor that takes in the listener
+class NonDataBindingPeopleAdapter constructor(
+    private val listener: PersonAdapterListener
+) : ListAdapter
+</code>
+</pre>
+
+<p>From Activity or Fragment, when creating the adapter, you would provide the implemetation of the
+    callback interface. You can either use anonymous implementation or make the Activity or
+    Fragment
+    implement the interface and pass on the instance of Fragment or Activity.</p>
+
+<p>Here is the example how you can do both ways</p>
+<pre class="line-numbers" data-line="3,5">
+<code class="language-kotlin">// `NonDataBindingFragment.kt`
+class NonDataBindingFragment : Fragment(),
+  NonDataBindingPeopleAdapter.PersonAdapterListener {
+    override fun onCreateView( ... ) {
+      val nonDataBindingPeopleAdapter = NonDataBindingPeopleAdapter(this)
+      recyclerView.adapter = nonDataBindingPeopleAdapter
+    }
+
+    override fun onPersonClicked(person: Person) {
+      Timber.d("Clicked on person $person")
+    }
+  }
+}
+</code>
+</pre>
+<p>Using anonymous implementation</p>
+<pre class="line-numbers" data-line="6">
+<code class="language-kotlin">// `NonDataBindingFragment.kt`
+class NonDataBindingFragment : Fragment() {
+  override fun onCreateView( ... ) {
+    val nonDataBindingPeopleAdapter =
+      NonDataBindingPeopleAdapter(
+        object : PersonAdapterListener {
+          override fun onPersonClicked(person: Person) {
+            Timber.d("Clicked on person $person")
+          }
+        }
+      )
+    recyclerView.adapter = nonDataBindingPeopleAdapter
+  }
+}
+</code>
+</pre>
+
+<h3>Attaching the listener to view holder</h3>
+<p>On the adapter, when <code>onBindViewHolder()</code> is called, we get the current item in the
+    adapter and set click listener on the root view (<code>container</code>) of the list item.</p>
+<pre class="line-numbers" data-line="3,9,16">
+<code class="language-kotlin">// `NonDataBindingPeopleAdapter.kt`
+override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PersonViewHolder {
+    val itemView = LayoutInflater.inflate(...)
+    return PersonViewHolder(itemView, listener)
+}
+
+override fun onBindViewHolder(holder: PersonViewHolder, position: Int) {
+    val person = getItem(position)
+    holder.bind(person)
+}
+
+class PersonViewHolder(itemRootView: View, val listener: PersonAdapterListener) :
+    RecyclerView.ViewHolder(itemRootView) {
+
+    fun bind(person: Person) {
+        container.setOnClickListener { listener.onPersonClicked(person) }
+    }
+}
+</code>
+</pre>
+
+<p>Any time user taps on the person item cell, it will invoke the click listener and in return
+    we will invoke the <code>onPersonClicked(Person)</code> via the callback interface</p>
+
+</body>
+</html>

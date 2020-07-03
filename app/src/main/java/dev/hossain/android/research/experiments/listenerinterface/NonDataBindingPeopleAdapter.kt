@@ -16,7 +16,7 @@ import dev.hossain.android.research.experiments.PersonDiffCallback
  * Example taken from material design catalog app.
  * - https://github.com/material-components/material-components-android/blob/master/catalog/java/io/material/catalog/transition/hero/AlbumsAdapter.java
  */
-class NonDataBindingPeopleAdapter(
+class NonDataBindingPeopleAdapter constructor(
     private val listener: PersonAdapterListener
 ) : ListAdapter<Person, NonDataBindingPeopleAdapter.PersonViewHolder>(PersonDiffCallback()) {
 
