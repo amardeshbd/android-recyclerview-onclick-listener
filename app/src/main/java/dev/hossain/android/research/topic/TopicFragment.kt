@@ -1,7 +1,5 @@
 package dev.hossain.android.research.topic
 
-import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import dagger.hilt.android.AndroidEntryPoint
+import dev.hossain.android.research.common.IntentAction.openWebPage
 import dev.hossain.android.research.common.observeKotlin
 import dev.hossain.android.research.data.TopicsDataProvider
 import dev.hossain.android.research.databinding.FragmentResearchTopicBinding
@@ -33,7 +32,7 @@ class TopicFragment : Fragment() {
         adapter = TopicsAdapter({ researchTopic ->
             viewModel.onTopicSelected(researchTopic)
         }, { externalUrl ->
-            openWebPage(externalUrl)
+            openWebPage(requireContext(), externalUrl)
         })
 
         binding.recyclerView.setHasFixedSize(true)
@@ -58,18 +57,6 @@ class TopicFragment : Fragment() {
                     findNavController().navigate(TopicFragmentDirections.toNonDataBindingFragment())
                 }
             }
-        }
-    }
-
-    /**
-     * Loads an external web URL.
-     * https://developer.android.com/guide/components/intents-common#ViewUrl
-     */
-    private fun openWebPage(url: String) {
-        val webPage: Uri = Uri.parse(url)
-        val intent = Intent(Intent.ACTION_VIEW, webPage)
-        if (intent.resolveActivity(requireContext().packageManager) != null) {
-            startActivity(intent)
         }
     }
 }
