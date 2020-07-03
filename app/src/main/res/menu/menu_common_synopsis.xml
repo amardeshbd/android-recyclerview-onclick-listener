@@ -5,4 +5,9 @@
         android:id="@+id/menu_synopsis"
         android:title="@string/title_menu_summary_of_research"
         app:showAsAction="always" />
+    <item
+        android:id="@+id/menu_show_code"
+        android:icon="@drawable/ic_baseline_code"
+        android:title="@string/title_menu_view_source_code"
+        app:showAsAction="ifRoom" />
 </menu>

@@ -8,10 +8,10 @@ import dev.hossain.android.research.data.model.ResearchTopic
 
 class TopicViewModel @ViewModelInject constructor() : ViewModel() {
 
-    private val _navigationEvent = LiveEvent<String>()
-    val navigationEvent: LiveData<String> = _navigationEvent
+    private val _navigationEvent = LiveEvent<ResearchTopic>()
+    val navigationEvent: LiveData<ResearchTopic> = _navigationEvent
 
     fun onTopicSelected(researchTopic: ResearchTopic) {
-        _navigationEvent.value = researchTopic.id
+        _navigationEvent.value = researchTopic
     }
 }

@@ -76,7 +76,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/guideline_end"
                 app:layout_constraintTop_toBottomOf="@+id/topic_subtitle"
-                app:visibleOrGone="@{data.url != null}"
+                app:visibleOrGone="@{data.externalUrl != null}"
                 tools:visibility="visible" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
