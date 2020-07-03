@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- https://developer.chrome.com/multidevice/webview/pixelperfect -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="www/main.css" rel="stylesheet"/>
+
+    <!-- https://prismjs.com/ -->
+    <link href="www/prism.css" rel="stylesheet"/>
+    <script src="www/prism.js"></script>
+</head>
+<body>
+<h1>Data Binding Assisted Listener</h1>
+<p>When Android data binding is used for view holder, it sets the model object as binding variable
+    on the data binding class.</p>
+
+<pre class="line-numbers" data-line="5"><code class="language-xml">&#x3C;!-- list_item_common_user_contact_with_binding.xml --&#x3E;
+&#x3C;layout&#x3E;
+    &#x3C;data&#x3E;
+        &#x3C;variable
+            name=&#x22;data&#x22;
+            type=&#x22;dev.hossain.android.research.data.model.Person&#x22; /&#x3E;
+    &#x3C;/data&#x3E;
+&#x3C;/layout&#x3E;
+</code></pre>
+<pre class="line-numbers" data-line="4">
+<code class="language-kotlin">// `DataBindingAssistedPeopleAdapter.kt`
+fun bind(item: Person) {
+    binding.apply {
+        data = item
+        executePendingBindings()
+    }
+}
+</code>
+</pre>
+
+<p>When the <code>data</code> binding variable is set, it is saved on auto generated binding class
+    <code>ListItemCommonUserContactWithBindingBinding</code> as <code>mData</code> variable.</p>
+
+<pre class="line-numbers" data-line="3">
+<code class="language-java">// `ListItemCommonUserContactWithBindingBindingImpl` class
+public void setData(Person Data) {
+    this.mData = Data;
+    notifyPropertyChanged(BR.data);
+    super.requestRebind();
+}
+</code></pre>
+
+<p>So, whenever <code>RecyclerView#onBindViewHolder()</code> is called on an adapter item, listener
+    is set on root view and on click we check if the binding variable is set and provide that as
+    callback or use it.</p>
+<pre class="line-numbers" data-line="2">
+<code class="language-kotlin">binding.root.setOnClickListener {
+    binding.data?.let { person ->
+        Timber.i("Clicked on person: $person")
+    }
+}
+</code>
+</pre>
+</body>
+</html>

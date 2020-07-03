@@ -51,12 +51,21 @@
         android:id="@+id/dataBindingAssistedFragment"
         android:name="dev.hossain.android.research.samples.databinding.DataBindingAssistedFragment"
         android:label="@string/title_research_type_data_binding_assisted_recycler_view_example"
-        tools:layout="@layout/research_data_binding_assisted_example_fragment" />
+        tools:layout="@layout/research_data_binding_assisted_example_fragment">
+        <action
+            android:id="@+id/action_dataBindingAssistedFragment_to_showSourceCodeFragment"
+            app:destination="@id/showSourceCodeFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
     <fragment
         android:id="@+id/showSourceCodeFragment"
         android:name="dev.hossain.android.research.viewcode.ShowSourceCodeFragment"
         android:label="@string/title_show_source_code_and_synopsis"
         tools:layout="@layout/fragment_show_source_code">
+        <!-- HTML file name that is inside `assets` resource directory -->
         <argument
             android:name="htmlFilePath"
             app:argType="string" />
@@ -65,5 +74,13 @@
         android:id="@+id/nonDataBindingFragment"
         android:name="dev.hossain.android.research.samples.listenerinterface.NonDataBindingFragment"
         android:label="@string/title_research_type_non_data_binding_listener_callback_recycler_view_example"
-        tools:layout="@layout/fragment_full_screen_recycler_view" />
+        tools:layout="@layout/common_full_screen_recycler_view">
+        <action
+            android:id="@+id/action_nonDataBindingFragment_to_showSourceCodeFragment"
+            app:destination="@id/showSourceCodeFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
 </navigation>
