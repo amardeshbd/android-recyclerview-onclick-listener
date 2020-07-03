@@ -1,6 +1,7 @@
 package dev.hossain.android.research
 
 import android.app.Application
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.provider.FontRequest
 import androidx.emoji.text.EmojiCompat
 import androidx.emoji.text.FontRequestEmojiCompatConfig
@@ -11,6 +12,9 @@ import timber.log.Timber
 class ResearchApp : Application() {
     override fun onCreate() {
         super.onCreate()
+
+        // Lock app to dark mode
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
 
         initEmojiCompat()
         installLogging()
