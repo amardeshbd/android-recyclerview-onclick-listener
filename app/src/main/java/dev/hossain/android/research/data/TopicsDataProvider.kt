@@ -27,7 +27,7 @@ object TopicsDataProvider {
                     "set model data on view holder and retrieve it when click listener is invoked. " +
                     "This is also taught in the Udacity 'Developing Android Apps with Kotlin' course.",
             sourceCodeUrl = "$BASE_SOURCE_URL/experiments/databinding",
-            synopsisHtmlPath = "synopsis_data_binding_listener.html",
+            synopsisHtmlPath = "synopsis_for_data_binding_listener.html",
             externalUrl = "https://github.com/android/sunflower/blob/master/app/src/main/java/com/google/samples/apps/sunflower/adapters/PlantAdapter.kt#L46"
         )
     )
