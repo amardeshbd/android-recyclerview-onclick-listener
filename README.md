@@ -23,6 +23,11 @@ item click listener on `RecyclerView`.
 > NOTE: This is relatively new repository. Once I am finished with research I will try to 
 > write an article summarizing my findings 🕵️
 
+### Early Sneakpeack
+Here is preview of app with different experiment topic and some **Synopsis** about each way of implementation.
+
+![Quick Preview of App](https://user-images.githubusercontent.com/99822/86498964-6e161700-bd56-11ea-8f4c-9ca7556a0464.gif)
+
 # License
 
 See [LICENSE](https://github.com/amardeshbd/android-recyclerview-onclick-listener/blob/master/LICENSE).
