@@ -1,4 +1,4 @@
-package dev.hossain.android.research.samples.listenerinterface
+package dev.hossain.android.research.experiments.listenerinterface
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,7 +12,7 @@ import dev.hossain.android.research.R
 import dev.hossain.android.research.common.IntentAction.openWebPage
 import dev.hossain.android.research.data.SampleDataProvider
 import dev.hossain.android.research.data.model.Person
-import dev.hossain.android.research.samples.ExperimentBaseFragment
+import dev.hossain.android.research.experiments.ExperimentBaseFragment
 import timber.log.Timber
 
 /**

@@ -1,4 +1,4 @@
-package dev.hossain.android.research.samples.databinding
+package dev.hossain.android.research.experiments.databinding
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,7 +11,7 @@ import com.google.android.material.snackbar.Snackbar
 import dev.hossain.android.research.common.IntentAction.openWebPage
 import dev.hossain.android.research.data.SampleDataProvider
 import dev.hossain.android.research.databinding.ResearchDataBindingAssistedExampleFragmentBinding
-import dev.hossain.android.research.samples.ExperimentBaseFragment
+import dev.hossain.android.research.experiments.ExperimentBaseFragment
 
 class DataBindingAssistedFragment : ExperimentBaseFragment() {
     private lateinit var binding: ResearchDataBindingAssistedExampleFragmentBinding

@@ -1,4 +1,4 @@
-package dev.hossain.android.research.samples
+package dev.hossain.android.research.experiments
 
 import android.os.Bundle
 import android.view.Menu
