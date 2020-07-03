@@ -71,5 +71,33 @@ class NonDataBindingFragment : Fragment() {
 </code>
 </pre>
 
+<h3>Attaching the listener to view holder</h3>
+<p>On the adapter, when <code>onBindViewHolder()</code> is called, we get the current item in the
+    adapter and set click listener on the root view (<code>container</code>) of the list item.</p>
+<pre class="line-numbers" data-line="3,9,16">
+<code class="language-kotlin">// `NonDataBindingPeopleAdapter.kt`
+override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PersonViewHolder {
+    val itemView = LayoutInflater.inflate(...)
+    return PersonViewHolder(itemView, listener)
+}
+
+override fun onBindViewHolder(holder: PersonViewHolder, position: Int) {
+    val person = getItem(position)
+    holder.bind(person)
+}
+
+class PersonViewHolder(itemRootView: View, val listener: PersonAdapterListener) :
+    RecyclerView.ViewHolder(itemRootView) {
+
+    fun bind(person: Person) {
+        container.setOnClickListener { listener.onPersonClicked(person) }
+    }
+}
+</code>
+</pre>
+
+<p>Any time user taps on the person item cell, it will invoke the click listener and in return
+    we will invoke the <code>onPersonClicked(Person)</code> via the callback interface</p>
+
 </body>
 </html>
