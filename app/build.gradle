@@ -84,6 +84,11 @@ dependencies {
     implementation "androidx.hilt:hilt-work:$rootProject.androidXHiltVersion"
     kapt "androidx.hilt:hilt-compiler:$rootProject.androidXHiltVersion"
 
+    // LeakCanary - to inspect memory leak for passing around listener or lambda for callback
+    // https://square.github.io/leakcanary/getting_started/
+    // debugImplementation because LeakCanary should only run in debug builds.
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.4'
+
     //
     // Testing libraries
     //
